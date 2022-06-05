@@ -17,14 +17,14 @@ node* list;
 
 void init()
 {
-    list = 0;  //initially set to NULL
+    list = 0;
 }
 
-int insertFirst(int element) //insert at the beginning
+int insertFirst(int element) 
 {
-	node * newNode ; // create a new pointer to node
-	newNode = (node*) malloc (sizeof(node)) ; // allocate memory for a new node instance and assign pointer to it to newNode
-	newNode->element = element ;// update value of the newNode
+	node * newNode ;
+	newNode = (node*) malloc (sizeof(node)) ; 
+	newNode->element = element ;
 	if(list==NULL)
     {
         list=newNode;
@@ -32,9 +32,9 @@ int insertFirst(int element) //insert at the beginning
         cnt++;
         return SUCCESS;
     }
-	newNode->next = list ; //point to previous first node
+	newNode->next = list ;
 	list = newNode ;
-	cnt++; //set list to point to newnode as this is now the first node
+	cnt++;
 	return SUCCESS ;
 }
 
@@ -42,15 +42,15 @@ int insertFirst(int element) //insert at the beginning
 int deleteElement(int element)
 {
 	node *temp, *prev ;
-	temp = list ; //start at the beginning
+	temp = list ;
 	while (temp != 0)
 	{
 		if (temp->element == element) break ;
 		prev = temp;
-		temp = temp->next ; //move to next node
+		temp = temp->next ;
 	}
-	if (temp == 0) return FAILURE ; //item not found to delete
-	if (temp == list) //delete the first node
+	if (temp == 0) return FAILURE ;
+	if (temp == list)
 	{
 		list = list->next ;
 		free(temp) ;
@@ -66,13 +66,13 @@ int deleteElement(int element)
 node* searchItem(int element)
 {
 	node * temp ;
-	temp = list ; //start at the beginning
+	temp = list ;
 	while (temp != 0)
 	{
 		if (temp->element == element) return temp ;
-		temp = temp->next ; //move to next node
+		temp = temp->next ;
 	}
-	return 0 ; //0 means invalid pointer in C, also called NULL value in C
+	return 0 ;
 }
 
 void printList()

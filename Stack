@@ -20,10 +20,10 @@ void init()
     list = 0;
 }
 
-int insertFirst(int element) 
+int insertFirst(int element)
 {
-	node * newNode ;
-	newNode = (node*) malloc (sizeof(node)) ; 
+	node * newNode ; 
+	newNode = (node*) malloc (sizeof(node)) ;
 	newNode->element = element ;
 	if(list==NULL)
     {
@@ -42,7 +42,7 @@ int insertFirst(int element)
 int deleteElement(int element)
 {
 	node *temp, *prev ;
-	temp = list ;
+	temp = list ; //start at the beginning
 	while (temp != 0)
 	{
 		if (temp->element == element) break ;
@@ -50,7 +50,7 @@ int deleteElement(int element)
 		temp = temp->next ;
 	}
 	if (temp == 0) return FAILURE ;
-	if (temp == list)
+	if (temp == list) 
 	{
 		list = list->next ;
 		free(temp) ;
@@ -66,7 +66,7 @@ int deleteElement(int element)
 node* searchItem(int element)
 {
 	node * temp ;
-	temp = list ;
+	temp = list ; 
 	while (temp != 0)
 	{
 		if (temp->element == element) return temp ;
@@ -87,6 +87,10 @@ void printList()
     printf("\n");
 }
 
+/**
+Insert element at the end of the list
+Retrun SUCCESS for successful insertion
+**/
 int insertLast(int element1)
 {
     node* newItem;

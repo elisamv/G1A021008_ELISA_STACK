@@ -87,10 +87,6 @@ void printList()
     printf("\n");
 }
 
-/**
-Insert element at the end of the list
-Retrun SUCCESS for successful insertion
-**/
 int insertLast(int element1)
 {
     node* newItem;
@@ -119,11 +115,6 @@ int insertLast(int element1)
     return SUCCESS;
 }
 
-/**
-Insert newElement after the first occurrence of oldElement
-Return SUCCESS for successful insertion
-Return FAILURE if oldElement not exist in the list
-**/
 int insertAfter(int oldElement, int newElement)
 {
     int flag=0;
@@ -154,11 +145,6 @@ int insertAfter(int oldElement, int newElement)
       return SUCCESS;    
 }
 
-/**
-Delete the last element of the list
-Return SUCESS for successful deletion
-Return Failure for unsuccessful deletion
-**/
 int deleteLast()
 {
     node* prev;
@@ -187,11 +173,6 @@ int deleteLast()
     
 }
 
-/**
-Delete the first element of the list
-Return SUCESS for successful deletion
-Return Failure for unsuccessful deletion
-**/
 int deleteFirst()
 {
     node* temp;
